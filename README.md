@@ -4,13 +4,8 @@ Antes de iniciar los contenedores Docker, ejecuta los siguientes comandos para c
 El comando `chown` se utiliza para cambiar el propietario de los directorios, y requiere permisos de `sudo`. Puede que se te pida que ingreses una contraseña para otorgar acceso `sudo`:
 
 ```bash
-# Crear directorios para almacenamiento de datos y registros
-$ sudo mkdir -p /ruta/a/tu/directorio/de/datos
-$ sudo mkdir -p /ruta/a/tu/directorio/de/registros
-
-# Cambiar la propiedad de los directorios al usuario del contenedor Docker
-$ sudo chown 1000:1000 /ruta/a/tu/directorio/de/datos
-$ sudo chown 1000:1000 /ruta/a/tu/directorio/de/registros
+mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
+mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 ```
 
 Configura la terminal en el directorio que contiene el archivo `docker-compose.yml` y ejecuta los siguientes comandos para iniciar este Docker Compose directamente:
